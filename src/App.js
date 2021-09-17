@@ -25,7 +25,7 @@ function App() {
     const [itemsInCart, setItemsInCart] = useState(() => { return {totalItems: 0, totalPrice: 0, productList: []} })
 
     useEffect(() => {
-        axios.get('http://localhost:5000/all-products', {withCredentials: true})
+        axios.get(process.env.REACT_APP_ALL_PRODUCTS_API, {withCredentials: true})
         .then(response => {
             setUser({auth: response.data.auth, id: response.data.id, username: response.data.username});
             setProducts(response.data.products);

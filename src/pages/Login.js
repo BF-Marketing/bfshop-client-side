@@ -30,7 +30,7 @@ function Login() {
         setLoading(true);
 
         const productFormData = new FormData(e.target);
-        axios.post('http://localhost:5000/login', productFormData, {withCredentials: true})
+        axios.post(process.env.REACT_APP_LOGIN_API, productFormData, {withCredentials: true})
         .then(function (response) {
             if(!response.data.auth){
                 setErrorMessageLogin(response.data.message);
@@ -52,7 +52,7 @@ function Login() {
         setLoading(true);
 
         const productFormData = new FormData(e.target);
-        axios.post('http://localhost:5000/register', productFormData, {withCredentials: true})
+        axios.post(process.env.REACT_APP_REGISTER_API, productFormData, {withCredentials: true})
         .then(function (response) {
             if(!response.data.auth){
                 setErrorMessageRegister(response.data.message);

@@ -21,8 +21,8 @@ To see how the connection between the database, backend and frontend was made, y
 ### Products
 ![](screenshots/products.PNG)
 
-### Cart
-![](screenshots/cart.PNG)
-
 ### Product details
 ![](screenshots/productDetails.PNG)
+
+### Cart
+![](screenshots/cart.PNG)
