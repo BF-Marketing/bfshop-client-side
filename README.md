@@ -12,7 +12,7 @@ It was built with MERN Stack (MongoDB, Express JS, React JS and Node JS) technol
 
 ### Server side
 
-This repository simply shows what happens on the client side. You can see the photos below or go directly to the site here: [http://localhost:3000](http://localhost:3000).
+This repository simply shows what happens on the client side. You can see the photos below or go directly to the site here: [https://flamboyant-darwin-dd503f.netlify.app](https://flamboyant-darwin-dd503f.netlify.app).
 To see how the connection between the database, backend and frontend was made, you should go to the backend repository.
 
 ### Homepage
