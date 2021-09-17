@@ -30,7 +30,7 @@ function Login() {
         setLoading(true);
 
         const productFormData = new FormData(e.target);
-        axios.post(process.env.REACT_APP_LOGIN_API, productFormData, {withCredentials: true})
+        axios.post("https://radiant-retreat-44230.herokuapp.com/login", productFormData, {withCredentials: true})
         .then(function (response) {
             if(!response.data.auth){
                 setErrorMessageLogin(response.data.message);
@@ -52,7 +52,7 @@ function Login() {
         setLoading(true);
 
         const productFormData = new FormData(e.target);
-        axios.post(process.env.REACT_APP_REGISTER_API, productFormData, {withCredentials: true})
+        axios.post("https://radiant-retreat-44230.herokuapp.com/register", productFormData, {withCredentials: true})
         .then(function (response) {
             if(!response.data.auth){
                 setErrorMessageRegister(response.data.message);
