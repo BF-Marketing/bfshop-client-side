@@ -38,7 +38,8 @@ function Order(){
         orderFormData.append("total", itemsInCart.totalPrice);  
         orderFormData.append("productList", orderedProducts);       
         
-        axios.post("https://radiant-retreat-44230.herokuapp.com/submitorder", orderFormData, {withCredentials: true})
+        axios.post(process.env.REACT_APP_SUBMIT_ORDER_API, orderFormData, {withCredentials: true})
+        // axios.post("https://radiant-retreat-44230.herokuapp.com/submitorder", orderFormData, {withCredentials: true})
         .then(function (response) {
             if(response.data.message){
                 setLoading(false);

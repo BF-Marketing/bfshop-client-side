@@ -10,10 +10,10 @@ It was built with MERN Stack (MongoDB, Express JS, React JS and Node JS) technol
 - Footwear (Sneakers and Boots)
 - Accessories (Watches and Bracelets)
 
-### Server side
+### Server side 
 
 This repository simply shows what happens on the client side. You can see the photos below or go directly to the site here: [https://flamboyant-darwin-dd503f.netlify.app](https://flamboyant-darwin-dd503f.netlify.app).
-To see how the connection between the database, backend and frontend was made, you should go to the backend repository.
+To see how the connection between the database, backend and frontend was made, you should go to the backend repository: [https://github.com/BF-Marketing/bfshop-server-side](https://github.com/BF-Marketing/bfshop-server-side)
 
 ### Homepage
 ![](screenshots/homepage.PNG)
