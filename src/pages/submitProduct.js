@@ -18,7 +18,6 @@ function SubmitProduct(){
         submitBtn.textContent = "Sending...";
         
         axios.post(process.env.REACT_APP_SUBMIT_PRODUCT_API, productFormData, {withCredentials: true})
-        // axios.post("https://radiant-retreat-44230.herokuapp.com/submitproduct", productFormData, {withCredentials: true})
         .then(function (response) {
             if(response.data.message !== "Product submitted"){
                 setLoading(false);

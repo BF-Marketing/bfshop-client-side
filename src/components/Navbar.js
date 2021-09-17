@@ -17,7 +17,6 @@ function Navbar(){
 
         if(e.target.lastElementChild.value !== null && e.target.lastElementChild.value !== ""){
             axios.get(process.env.REACT_APP_SEARCH_API, {params: {item: e.target.lastElementChild.value}}, {withCredentials: true})
-            // axios.get("https://radiant-retreat-44230.herokuapp.com/search", {params: {item: e.target.lastElementChild.value}}, {withCredentials: true})
             .then(function (response) {
                 setSearchProduct(response.data);
                 setLoading(false);
@@ -29,9 +28,7 @@ function Navbar(){
 
     function logout(){
         axios.post(process.env.REACT_APP_LOGOUT_API, {}, {withCredentials: true})
-        // axios.post("https://radiant-retreat-44230.herokuapp.com/logout", {}, {withCredentials: true})
         .then(response => {window.location.replace(process.env.REACT_APP_URL)})
-        // .then(response => {window.location.replace("https://flamboyant-darwin-dd503f.netlify.app/")})
     }
 
     // changes navbar color based on user authentication

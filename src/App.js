@@ -26,7 +26,6 @@ function App() {
 
     useEffect(() => {
         axios.get(process.env.REACT_APP_ALL_PRODUCTS_API, {withCredentials: true})
-        // axios.get("https://radiant-retreat-44230.herokuapp.com/all-products", {withCredentials: true})
         .then(response => {
             setUser({auth: response.data.auth, id: response.data.id, username: response.data.username});
             setProducts(response.data.products);
