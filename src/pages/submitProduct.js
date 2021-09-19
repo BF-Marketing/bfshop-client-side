@@ -17,7 +17,7 @@ function SubmitProduct(){
         const submitBtn = document.getElementById("product_submit_btn");
         submitBtn.textContent = "Sending...";
         
-        axios.post(process.env.REACT_APP_SUBMIT_PRODUCT_API, productFormData, {withCredentials: true})
+        axios.post(process.env.REACT_APP_SUBMIT_PRODUCT_API, productFormData)
         .then(function (response) {
             if(response.data.message !== "Product submitted"){
                 setLoading(false);
