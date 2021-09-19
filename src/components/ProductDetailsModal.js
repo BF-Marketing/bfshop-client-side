@@ -8,7 +8,7 @@ function ProductDetailsModal(props){
 
     function updateLikeCount(productid, likeId, categ){
         if(likeCount === props.product.likes){
-            axios.put(process.env.REACT_APP_UPDATE_PRODUCT_API, {productId: productid, incrementLike: props.product.likes+1, category: categ})
+            axios.put(process.env.REACT_APP_UPDATE_PRODUCT_API, {productId: productid, incrementLike: props.product.likes+1, category: categ}, {withCredentials: true})
             .then(response => {
                 if(response.data === "Product updated"){
                     setLikeCount(likeCount + 1);

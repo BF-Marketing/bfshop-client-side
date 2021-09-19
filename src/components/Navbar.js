@@ -16,7 +16,7 @@ function Navbar(){
         setLoading(true);
 
         if(e.target.lastElementChild.value !== null && e.target.lastElementChild.value !== ""){
-            axios.get(process.env.REACT_APP_SEARCH_API, {params: {item: e.target.lastElementChild.value}})
+            axios.get(process.env.REACT_APP_SEARCH_API, {params: {item: e.target.lastElementChild.value}}, {withCredentials: true})
             .then(function (response) {
                 setSearchProduct(response.data);
                 setLoading(false);
