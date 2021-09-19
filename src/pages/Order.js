@@ -15,7 +15,6 @@ function Order(){
         firstNameCurrent.current = e.target.value;
         document.getElementById("personalFirstname").value = firstNameCurrent.current;
         document.getElementById("paymentFirstname").value = firstNameCurrent.current;
-        document.getElementById("personalEmail").value = `${(firstNameCurrent.current).toLowerCase()}@outlook.com`;
     }
 
     function lastNameHandler(e){
@@ -81,7 +80,7 @@ function Order(){
                                 </div>
 
                                 <div className="d-none text-center my-5 p-3" id="order_not_confirmed">
-                                    <p>Error: empty the cart and try to order again.</p>
+                                    <p>Error: try to order again.</p>
                                 </div>
                                 
                                 <form id="payment_form" onSubmit={submitOrder} encType="multipart/form-data" noValidate>
@@ -103,7 +102,7 @@ function Order(){
 
                                         <div>
                                             <div className="mb-3">
-                                                <input type="email" name="email"  className="form-control form-control-sm" id="personalEmail" aria-describedby="emailHelp" />
+                                                <input type="email" name="email"  className="form-control form-control-sm" aria-describedby="emailHelp" />
                                                 <div id="emailHelp" className="form-text">Email</div>
                                             </div>
 
