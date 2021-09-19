@@ -30,11 +30,6 @@ body,
 *::after {
   box-sizing: border-box;
 }
-:root {
-  --navbar-color: black;
-  --navbar-backg-color: white;
-  --hamburger-btn: url("data:image/svg+xml;charset=utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path stroke='rgb(0, 0, 0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/></svg>");
-}
 body {
   font-family: "monumentExtendedRegular";
   color: black;
@@ -240,10 +235,10 @@ header {
 }
 .navbar,
 .navbar-light {
-  background-color: var(--navbar-backg-color);
+  background-color: white;
 }
 .navbar-brand h1 {
-  color: var(--navbar-color);
+  color: black;
 }
 .navbar-toggler {
   border: none;
@@ -252,15 +247,15 @@ header {
   box-shadow: none;
 }
 .custom-toggler .navbar-toggler-icon {
-  background-image: var(--hamburger-btn);
+  background-image: url("data:image/svg+xml;charset=utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path stroke='rgb(0, 0, 0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/></svg>");
 }
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .show > .nav-link {
-  color: var(--navbar-color);
+  color: black;
   font-weight: bold;
 }
 .navbar-light .navbar-nav .nav-link {
-  color: var(--navbar-color);
+  color: black;
   font-weight: bold;
 }
 
@@ -344,7 +339,6 @@ header {
   font-size: 12px;
 }
 .bi-heart,
-.bi-person-circle,
 .bi-heart-fill {
   font-size: 1.5rem;
 }
@@ -353,7 +347,7 @@ header {
 }
 .bi-cart4,
 .bi-cart4:hover {
-  color: var(--navbar-color);
+  color: black;
 }
 .bi-cart4 {
   position: relative;
@@ -434,16 +428,6 @@ header {
 .bi-check-circle-fill {
   color: green;
 }
-.user_profile {
-  width: 100px;
-  height: 60px;
-  color: var(--navbar-color);
-}
-.user_profile small {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
 .darkbuttons,
 .clearbutton {
   border: none;
@@ -499,10 +483,5 @@ header {
   .payment_info,
   .shipping_address {
     width: 70%;
-  }
-}
-@media (min-width: 1200px) {
-  .user_profile {
-    height: 40px;
   }
 }

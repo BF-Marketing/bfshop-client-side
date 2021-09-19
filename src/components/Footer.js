@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 function Footer(){
     function showHide(arg){ document.querySelector(`.${arg}`).classList.toggle('d-none'); }
@@ -13,8 +12,6 @@ function Footer(){
             <hr className='mx-4 my-1 horizontalLine' />
             
             <div className='d-flex flex-column flex-md-row align-items-center justify-content-md-around align-items-md-center my-2 footerLinks'>
-                <Link className="cursorPointer my-2 my-md-0" to="/about">KNOW MORE</Link>
-
                 <span className='text-center my-2 my-md-0'>
                     <p className="mb-1 cursorPointer"><span onClick={() => { showHide('followus_icons') }}>FOLLOW US</span></p>
                     <span className='followus_icons d-none'>

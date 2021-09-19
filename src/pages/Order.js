@@ -7,7 +7,7 @@ import {dataContext} from '../contexts/dataContext.js'
 import loadergif from '../media/loader/gearloader.gif'
 
 function Order(){
-    const { user, loading, setLoading, itemsInCart, setItemsInCart } = useContext(dataContext);
+    const { loading, setLoading, itemsInCart, setItemsInCart } = useContext(dataContext);
     const [errorMessageOrder, setErrorMessageOrder] = useState("");
     let firstNameCurrent = useRef("");
 
@@ -38,7 +38,7 @@ function Order(){
         orderFormData.append("total", itemsInCart.totalPrice);  
         orderFormData.append("productList", orderedProducts);       
         
-        axios.post(process.env.REACT_APP_SUBMIT_ORDER_API, orderFormData, {withCredentials: true})
+        axios.post(process.env.REACT_APP_SUBMIT_ORDER_API, orderFormData)
         .then(function (response) {
             if(response.data.message){
                 setLoading(false);
@@ -63,7 +63,7 @@ function Order(){
         .catch(function () {setLoading(false)});
     }
     
-    const result = user.auth && itemsInCart.totalItems ? (
+    const result = itemsInCart.totalItems ? (
         <div className="App">
             <div id="main_container">
                 <div id="main_wrapper">

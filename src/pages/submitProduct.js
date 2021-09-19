@@ -6,7 +6,7 @@ import {dataContext} from '../contexts/dataContext.js'
 import loadergif from '../media/loader/gearloader.gif'
 
 function SubmitProduct(){
-    const { user, loading, setLoading, setProductSubmitted } = useContext(dataContext);
+    const { loading, setLoading, setProductSubmitted } = useContext(dataContext);
     const [errorMessageProduct, setErrorMessageProduct] = useState("");
 
     function submitItem(e){
@@ -17,7 +17,7 @@ function SubmitProduct(){
         const submitBtn = document.getElementById("product_submit_btn");
         submitBtn.textContent = "Sending...";
         
-        axios.post(process.env.REACT_APP_SUBMIT_PRODUCT_API, productFormData, {withCredentials: true})
+        axios.post(process.env.REACT_APP_SUBMIT_PRODUCT_API, productFormData)
         .then(function (response) {
             if(response.data.message !== "Product submitted"){
                 setLoading(false);
@@ -61,7 +61,7 @@ function SubmitProduct(){
         );
     }
     
-    const result = user.auth ? (
+    return (
         <div className="App">
             <div id="main_container">
                 <div id="main_wrapper">
@@ -82,6 +82,11 @@ function SubmitProduct(){
                                     <div className="mb-3">
                                         <input type="text" name="name" id="name" className="form-control form-control-sm" />
                                         <label htmlFor="name" className="form-label">Product name</label>
+                                    </div>
+
+                                    <div className="mb-3">
+                                        <input type="text" name="seller" id="seller" className="form-control form-control-sm" />
+                                        <label htmlFor="seller" className="form-label">Vendor</label>
                                     </div>
 
                                     <div className="mb-3 form-floating">
@@ -149,9 +154,7 @@ function SubmitProduct(){
 
             <Footer />
         </div>
-    ) : 
-    <></>;
-    return result;
+    );
 }
 
 export default SubmitProduct;

@@ -17,10 +17,6 @@ export function alternateUnderline(urlpath){
             document.querySelector('.accessories').style.textDecoration = 'underline';
             document.getElementById('brands_menu').lastElementChild.style.textDecoration = 'underline';
             break;
-        case '/login':
-            const login = document.querySelector('.login');
-            login ? login.style.textDecoration = 'underline' : <></>
-            break;
         case '/submit-product':
             const submitProduct = document.querySelector('.submit-product');
             submitProduct ? submitProduct.style.textDecoration = 'underline' : <></>

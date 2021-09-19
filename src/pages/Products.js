@@ -8,7 +8,7 @@ import ReactPaginate from 'react-paginate';
 import loadergif from '../media/loader/gearloader.gif'
 
 function Products(){
-    const { user, loading, products, searchProduct } = useContext(dataContext);
+    const { loading, products, searchProduct } = useContext(dataContext);
     let [orderBy, setOrderBy] = useState({price: "increment", color: null});
     
     // get type of product queried from url parameter
@@ -58,25 +58,13 @@ function Products(){
                 <div className='d-flex justify-content-center align-items-center my-3 product_wrapped'>
                     <img className="cursorPointer" data-bs-toggle="modal" data-bs-target={"#item"+product._id} src={product.image} width='140px'  height='150px' alt="" />
                     <span className="d-none product_info">
-                    {
-                        product.likes.filter(item => item.userid === user.id ).length ? 
-                        (
-                            <span>
-                                <i className="bi bi-heart-fill me-2"></i>
-                                <small>{product.likes.length}</small>
-                            </span>
-                        )
-                        :
-                        (
-                            <span>
-                                <i className="bi bi-heart me-2"></i>
-                                <small>{product.likes.length}</small>
-                            </span>
-                        )
-                    }
-                    <p className="mt-2 mb-0">{product.inStock} In stock</p>
-                    <p>${product.price}</p>
-                </span>
+                        <span>
+                            <i className="bi bi-heart me-2"></i>
+                            <small>{product.likes}</small>
+                        </span>
+                        <p className="mt-2 mb-0">{product.inStock} In stock</p>
+                        <p>${product.price}</p>
+                    </span>
                 </div>
             </div>
         );

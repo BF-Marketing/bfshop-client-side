@@ -3,19 +3,17 @@ import axios from 'axios';
 import { dataContext } from '../contexts/dataContext.js';
 
 function ProductDetailsModal(props){
-    const {user, itemsInCart, setItemsInCart} = useContext(dataContext);
-    const [ likeCount, setLikeCount ] = useState(props.product.likes.length);
+    const {itemsInCart, setItemsInCart} = useContext(dataContext);
+    const [ likeCount, setLikeCount ] = useState(props.product.likes);
 
     function updateLikeCount(productid, likeId, categ){
-        if(likeCount === props.product.likes.length){
-            axios.put(process.env.REACT_APP_UPDATE_PRODUCT_API, {productId: productid, userid: user.id, category: categ}, {withCredentials: true})
+        if(likeCount === props.product.likes){
+            axios.put(process.env.REACT_APP_UPDATE_PRODUCT_API, {productId: productid, incrementLike: props.product.likes+1, category: categ})
             .then(response => {
                 if(response.data === "Product updated"){
                     setLikeCount(likeCount + 1);
                     const productLike = document.getElementById(likeId);
-                    productLike.classList.replace("bi-heart", "bi-heart-fill");
                     productLike.classList.remove("cursorPointer");
-                    productLike.style.color = "red";
                 }
             })
         }
@@ -76,17 +74,8 @@ function ProductDetailsModal(props){
                             <div className="col-12 col-md-4 productDetails">
                                 <div className="mx-3 mx-md-2 product_details_inside p-3 my-3">
                                     <h6 className="fw-bold mt-3">{props.product.name}</h6>
-                                    {
-                                        user.auth ? (
-                                            props.product.likes.filter(item => item.userid === user.id ).length ? 
-                                            <i className="bi bi-heart-fill me-2"></i>
-                                            :
-                                            <i onClick={() => {updateLikeCount(props.product._id, "like"+props.product._id, props.product.category)}} className="cursorPointer bi bi-heart me-2" id={"like"+props.product._id}></i>
-                                        
-                                        )
-                                        :
-                                        (<i className="bi bi-heart me-2"></i>)
-                                    }
+
+                                    <i onClick={() => {updateLikeCount(props.product._id, "like"+props.product._id, props.product.category)}} className="cursorPointer bi bi-heart-fill me-2" id={"like"+props.product._id}></i>
                                     <small>{likeCount}</small>
                                     
                                     <p>Color: {props.product.color}</p>
@@ -112,6 +101,7 @@ function ProductDetailsModal(props){
                                     </div>
                                     <button onClick={ () => {addToCart("size"+props.product._id, "carterror"+props.product._id)}} className="darkbuttons">Add to cart</button>
                                     <small className="d-block error_message my-2 ms-2" id={"carterror"+props.product._id}></small>
+                                    <p className="mt-2">Sold by: {props.product.seller}</p>
                                     <p className="mt-2">{props.product.description}</p>
                                 </div>
                             </div>

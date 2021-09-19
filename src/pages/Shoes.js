@@ -3,7 +3,6 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BrandsMenu from '../components/BrandsMenu';
 
-
 function Shoes(){
     return (
         <div className="App">
